@@ -34,14 +34,13 @@ const TransactionForm = () => {
   });
 
   const onSubmit = (data) => {
-    console.log("Giao dịch hợp lệ:", data);
-    enqueueSnackbar('Giao dịch thành công!', { variant: 'success' });
+    enqueueSnackbar('Cập nhật thành công!', { variant: 'success' });
     reset(); // reset form sau khi submit
   };
 
   return (
     <div className="transaction-container">
-      <h3 className="transaction-title">Form Giao Dịch</h3>
+      <h3 className="transaction-title">Nhập Giao Dịch</h3>
       <form className="transaction-form" onSubmit={handleSubmit(onSubmit)}>
         <div className="transaction-field">
           <label className="transaction-label">Thời gian</label>
