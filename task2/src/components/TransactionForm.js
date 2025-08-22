@@ -14,17 +14,18 @@ const schema = Yup.object().shape({
     .positive("Số lượng phải lớn hơn 0")
     .required("Vui lòng nhập số lượng"),
   pump: Yup.string().required("Vui lòng nhập trụ bơm"),
-  total: Yup.number()
-    .transform((value, originalValue) => (originalValue === "" ? undefined : value))
-    .typeError("Tổng tiền phải là số")
-    .positive("Tổng tiền phải lớn hơn 0")
-    .required("Vui lòng nhập tổng tiền"),
+  price: Yup
+    .number()
+    .typeError("Đơn giá phải là số")
+    .positive("Đơn giá phải lớn hơn 0")
+    .required("Không được để trống"),
 });
 
 const TransactionForm = () => {
   const { enqueueSnackbar } = useSnackbar(); // hook notistack
   const {
     register,
+    watch,
     handleSubmit,
     formState: { errors },
     reset,
@@ -63,27 +64,39 @@ const TransactionForm = () => {
         </div>
 
         <div className="transaction-field">
-          <label className="transaction-label">Trụ bơm</label>
-          <input
-            type="text"
+          <label className="transaction-label">Trụ</label>
+          <select
             className={`transaction-input ${errors.pump ? "transaction-error" : ""}`}
             {...register("pump")}
-          />
+          >
+            <option value="">-- Chọn trụ bơm --</option>
+            <option value="Tru1">Trụ 1</option>
+            <option value="Tru2">Trụ 2</option>
+            <option value="Tru3">Trụ 3</option>
+          </select>
           <div className="transaction-error-msg">{errors.pump?.message}</div>
         </div>
-
         <div className="transaction-field">
-          <label className="transaction-label">Tổng tiền</label>
+          <label className="transaction-label">Đơn giá</label>
           <input
             type="number"
-            className={`transaction-input ${errors.total ? "transaction-error" : ""}`}
-            {...register("total")}
+            className={`transaction-input ${errors.price ? "transaction-error" : ""}`}
+            {...register("price")}
           />
-          <div className="transaction-error-msg">{errors.total?.message}</div>
+          <div className="transaction-error-msg">{errors.price?.message}</div>
+        </div>
+        <div className="transaction-field">
+          <label className="transaction-label">Doanh thu</label>
+          <input
+            type="number"
+            className="transaction-input"
+            value={watch("amount") * watch("price") || ""}
+            readOnly
+          />
         </div>
 
         <button type="submit" className="transaction-submit-btn">
-          Gửi giao dịch
+          Cập nhật
         </button>
       </form>
     </div>
