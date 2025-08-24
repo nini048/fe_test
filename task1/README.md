@@ -17,12 +17,25 @@ Tính năng chính:
 
 ## Project Structure
 
+
+```bash
 task1/
-├─ components/
-│  ├─ DataReport.jsx
-│  └─ DataReport.scss
-├─ package.json
-└─ node_modules/
+├─ public/                     
+├─ src/                         # Source code chính
+│  ├─ components/               # Chứa các component tái sử dụng
+│  │  ├─ DataReport.js          # Component hiển thị báo cáo dữ liệu
+│  │  └─ DataReport.scss        # File style SCSS cho DataReport
+│  ├─ App.css                   # CSS chính cho App
+│  ├─ App.js                    # File chính của ứng dụng React
+│  ├─ App.test.js               
+│  ├─ index.css              
+│  ├─ index.js                  # Điểm khởi chạy của React app
+│  ├─ logo.svg                  # Logo React mặc định
+│  ├─ reportWebVitals.js      
+│  └─ setupTests.js            
+├─ README.md                    # Tài liệu hướng dẫn project
+├─ package-lock.json            # Lock phiên bản dependencies
+└─ package.json                 # Cấu hình project + dependencies
 
 ## Usage/Examples
 
