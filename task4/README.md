@@ -78,7 +78,7 @@ const inputRes = await axios.get("https://share.shub.edu.vn/api/intern-test/inpu
 ## 3. Hướng dẫn thực thi
 ### 3.1 Clone dự án & cài dependencies
 ```bash
-git clone <https://github.com/nini048/fe_test.git>
+git clone https://github.com/nini048/fe_test.git
 cd task4
 npm install
 ```
