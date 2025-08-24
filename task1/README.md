@@ -1,6 +1,4 @@
-
 # Task 1 – Data Report
-
 Task 1 là một React component `DataReport` giúp người dùng:
 - Upload file Excel chứa dữ liệu bán hàng.
 - Chọn khoảng thời gian Start Time và End Time.
@@ -9,14 +7,12 @@ Task 1 là một React component `DataReport` giúp người dùng:
 
 Tính năng chính:
 - Upload file Excel và đọc dữ liệu bằng xlsx.
-- Nhập thời gian bắt đầu và kết thúc (input type="time").
+- Nhập thời gian bắt đầu và kết thúc (`input type="time"`).
 - Lọc dữ liệu dựa trên khoảng thời gian.
 - Hiển thị preview table và tổng số tiền.
-- Responsive, sử dụng Bootstrap.
+- Responsive, sử dụng `Bootstrap`.
 
-
-## Project Structure
-
+## Cấu trúc dự án
 
 ```bash
 task1/
@@ -36,10 +32,16 @@ task1/
 ├─ README.md                    # Tài liệu hướng dẫn project
 ├─ package-lock.json            # Lock phiên bản dependencies
 └─ package.json                 # Cấu hình project + dependencies
-
-## Usage/Examples
-
-```javascript
+```
+## Cách thực hiện
+- Khởi tạo project React 
+```bash
+npx create-react-app
+```
+- Tạo thư mục `components` để chứa các component.
+- Xây dựng component `DataReport.js` và file style `DataReport.scss`.
+- Import `DataReport` vào `App.js` để hiển thị.
+```bash
 import DataReport from './DataReport';
 
 function App() {
@@ -49,17 +51,12 @@ function App() {
        </div>
      );
    }
+
 ```
-
-
-
-## Installation
-
-- Clone project hoặc copy thư mục task1 vào project React.
-- Cài dependencies:
+- Chạy ứng dụng
 ```bash
-   npm install react bootstrap xlsx
-   ```
-- Chạy project
-```bash
-    npm start
+npm start
+```
+## Screenshots
+
+![App Screenshot](./screenshots/demo.png)
