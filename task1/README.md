@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# Task 1 – Data Report Component
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 1. Mô tả
+Task 1 là một **React component** `DataReport` nhằm giúp người dùng:
+- Upload file Excel chứa dữ liệu bán hàng.
+- Chọn khoảng thời gian `Start Time` và `End Time`.
+- Hiển thị **preview bảng dữ liệu** trong khoảng thời gian đã chọn.
+- Tính **tổng Amount** của các giao dịch được lọc.
 
-## Available Scripts
+**Tính năng chính:**
+1. Upload Excel file và đọc dữ liệu bằng `xlsx`.
+2. Nhập thời gian bắt đầu và kết thúc (`input type="time"`).
+3. Lọc dữ liệu dựa trên khoảng thời gian.
+4. Hiển thị preview table và tổng số tiền.
+5. Responsive, sử dụng Bootstrap.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 2. Cấu trúc dự án
+task1/
+│
+├─ DataReport.jsx # React component chính
+├─ DataReport.scss # CSS/SCSS cho component
+├─ package.json # Dependencies project
+└─ node_modules/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Dependencies:**
+- react
+- bootstrap
+- xlsx
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 3. Cách thực hiện
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 3.1 Upload File Excel
+- Chọn file `.xlsx` bằng input file.
+- Component đọc sheet đầu tiên và chuyển dữ liệu sang JSON bằng `XLSX.utils.sheet_to_json`.
 
-### `npm run build`
+### 3.2 Chọn thời gian
+- Nhập `Start Time` và `End Time` (`hh:mm:ss`).
+- Kiểm tra hợp lệ: `Start Time` phải nhỏ hơn `End Time`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 3.3 Lọc dữ liệu
+- Lọc các dòng trong Excel nằm trong khoảng thời gian đã chọn.
+- Tính tổng `Amount` (loại bỏ dấu `.` nếu có) và lưu kết quả.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 3.4 Preview Table
+- Hiển thị các cột: `No`, `Date`, `Time`, `Quantity`, `Unit Price`, `Amount`.
+- Nếu chưa submit, hiển thị dữ liệu gốc từ file Excel.
+- Sau submit, chỉ hiển thị các dòng phù hợp với khoảng thời gian đã chọn.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 4. Hướng dẫn chạy
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. **Cài dependencies**
+```bash
+npm install react bootstrap xlsx
+npm start
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
