@@ -37,12 +37,16 @@ function App() {
      );
    }
 ```
-npm start
+
 
 
 ## Installation
 
 - Clone project hoặc copy thư mục task1 vào project React.
 - Cài dependencies:
+```bash
    npm install react bootstrap xlsx
-    
+   ```
+- Chạy project
+```bash
+    npm start
