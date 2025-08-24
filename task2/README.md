@@ -51,7 +51,7 @@ import { useSnackbar } from 'notistack';
 
 ```
 - Sử dụng React Hook Form kết hợp schema validation và notistack để quản lý form, hiển thị lỗi và thông báo
-```javascrip
+```javascript
 const { register, handleSubmit, formState: { errors }, reset, watch } = useForm({
   resolver: yupResolver(schema)
 });
