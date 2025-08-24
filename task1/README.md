@@ -52,7 +52,7 @@ import * as XLSX from "xlsx";
 };
 ```
 ## 2.3 Chọn Start/End Time và lọc dữ liệu
-```javascrip
+```javascript
 const filtered = data.slice(8).filter(row => {
   const [h, m, s] = row[2].split(":").map(Number);
   const secs = h*3600 + m*60 + s;
