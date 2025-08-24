@@ -67,7 +67,7 @@ const inputRes = await axios.get("https://share.shub.edu.vn/api/intern-test/inpu
 ```
 ### 2.4 In kết quả
 - Token, dữ liệu, query và kết quả được in ra console để kiểm tra
-```javascrip
+```bass
     console.log('>>>>>>token', token)
     console.log('>>>>>data', data)
     console.log('>>>>>query', query)
