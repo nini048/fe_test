@@ -58,4 +58,4 @@ npm start
 ```
 ## Screenshots
 
-![App Screenshot](./screenshots/demo1.png)
+![App Screenshot](./screenshots/demo.png)
