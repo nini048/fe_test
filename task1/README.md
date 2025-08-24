@@ -18,10 +18,10 @@ Tính năng chính:
 ## Project Structure
 
 task1/
-
-├─ DataReport.jsx      
-├─ DataReport.scss    
-├─ package.json        
+├─ components/
+│  ├─ DataReport.jsx
+│  └─ DataReport.scss
+├─ package.json
 └─ node_modules/
 
 ## Usage/Examples
