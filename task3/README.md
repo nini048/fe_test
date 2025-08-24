@@ -12,7 +12,7 @@ Các truy vấn được viết để:
 
 ## 1. Cấu trúc Database
 
-![App Screenshot](.erd.png)
+![App Screenshot](./erd.png)
 
 **Chi tiết bảng:**
 - `stations`: Lưu thông tin trạm.
