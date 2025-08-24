@@ -42,15 +42,15 @@ npx create-react-app
 - Xây dựng component `DataReport.js` và file style `DataReport.scss`.
 - Import `DataReport` vào `App.js` để hiển thị.
 ```bash
-import DataReport from './DataReport';
+import DataReport from "./components/DataReport";
 
 function App() {
-     return (
-       <div>
-         <DataReport />
-       </div>
-     );
-   }
+  return (
+    <div className="App">
+      <DataReport />
+    </div>
+  );
+}
 
 ```
 - Chạy ứng dụng
