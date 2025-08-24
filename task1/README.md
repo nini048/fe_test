@@ -34,12 +34,12 @@ task1/
 ```
 
 ## 2. Cách thực hiện
-### 2.1 Tạo component `DataReport` trong `src/components/`
+- Tạo component `DataReport` trong `src/components/`
 ```javascript
 import React, { useState } from "react";
 import * as XLSX from "xlsx";
 ```
-### 2.2 Upload file Excel và đọc dữ liệu
+- Upload file Excel và đọc dữ liệu
 ```javascript
  const handleUploadFile = (e) => {
   const reader = new FileReader();
@@ -51,7 +51,7 @@ import * as XLSX from "xlsx";
   reader.readAsArrayBuffer(e.target.files[0]);
 };
 ```
-## 2.3 Chọn Start/End Time và lọc dữ liệu
+- Chọn Start/End Time và lọc dữ liệu
 ```javascript
 const filtered = data.slice(8).filter(row => {
   const [h, m, s] = row[2].split(":").map(Number);
@@ -61,7 +61,7 @@ const filtered = data.slice(8).filter(row => {
 
 
 ```
-### 2.4 Hiển thị Preview Table và tính tổng Amount
+- Hiển thị Preview Table và tính tổng Amount
 
 ```javascript
 let total = filtered.reduce((sum, row) => sum + Number(row[8] || 0), 0);
@@ -72,7 +72,7 @@ setTotal(total);
 ## 3. Hướng dẫn thực thi
 ### 3.1 Clone dự án & cài dependencies
 ```bash
-git clone <https://github.com/nini048/fe_test.git>
+git clone https://github.com/nini048/fe_test.git
 cd task1
 npm install
 ```

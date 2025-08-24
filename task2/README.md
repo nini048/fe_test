@@ -77,7 +77,7 @@ const onSubmit = (data) => {
 ## 3. Hướng dẫn thực thi
 ### 3.1 Clone dự án & cài dependencies
 ```bash
-git clone <https://github.com/nini048/fe_test.git>
+git clone https://github.com/nini048/fe_test.git
 cd task2
 npm install
 ```
